@@ -1,0 +1,10 @@
+#summary One-sentence summary of this page.
+#labels Phase-Requirements
+
+= Introduction =
+
+Recommendations for new Facebook applications
+
+= Details =
+
+Please add here your *recommendations* for new facebook applications
