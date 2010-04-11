@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="Arabic Transliterator" author="Louay Bassbouss" author_email="louay.bassbouss@gmail.com" height="300">
+  	<!--  <Locale lang="en" country="us"/> -->
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		// Load the Google Transliteration API
+		google.load("elements", "1", {
+			packages : "transliteration"
+		});
+		gadgets.util.registerOnLoadHandler({
+			var options = {
+				sourceLanguage : google.elements.transliteration.LanguageCode.ENGLISH,
+				destinationLanguage : [ google.elements.transliteration.LanguageCode.ARABIC ],
+				shortcutKey : 'ctrl+g',
+				transliterationEnabled : true
+			};
+	
+			// Create an instance on TransliterationControl with the required
+			// options.
+			var control = new google.elements.transliteration.TransliterationControl(options);
+			// Enable transliteration in the textbox with id
+			// 'transliterateTextarea'.
+			control.makeTransliteratable( [ 'transliterateTextarea' ]);
+		});
+	</script>
+	<div id="body">
+		Arabic Transliterator: Type in English and get in Arabic (Press Ctrl+g to toggle between English and Arabic). 
+		<br>Try with: "b7ibak ya libnan".
+		<br>
+		<textarea id="transliterateTextarea" style="width: 100%; height: 200px"></textarea>
+		<center><span style="font-size: small">Please feel free to contact me (<a href="mailto:louay.bassbouss@gmail.com">louay.bassbouss@gmail.com</a>) in case you have any questions or comments.</span></center>
+	</div>
+    ]]>
+  </Content>
+</Module>
